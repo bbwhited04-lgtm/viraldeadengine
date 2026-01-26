@@ -1,7 +1,14 @@
 const GUMROAD_URL = "https://whitedbreeze.gumroad.com/l/nsjcc";
 const DOCS_URL = "https://viraldead.info";
 const SUPPORT_EMAIL = "support@viraldead.pro";
-
+export default function Page() {
+  return (
+    <main style={{ padding: 40 }}>
+      <h1>Viral Dead Engine™</h1>
+      <p>If you see this, routing works.</p>
+    </main>
+  );
+}
 const faq = [
   {
     q: "Is this a subscription?",
