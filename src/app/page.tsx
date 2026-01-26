@@ -27,8 +27,12 @@ const faq = [
 
 export default function Page() {
   return (
-    <main className="page">
-      {/* Top bar */}
+    <main style={{ padding: 40, color: "white" }}>
+      <h1>Viral Dead Engine™</h1>
+      <p>If you can see this, routing works.</p>
+    </main>
+  );
+}
       <header className="topbar">
         <div className="wrap topbarInner">
           <div className="brand">
