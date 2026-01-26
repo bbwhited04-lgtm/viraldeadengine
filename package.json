@@ -1,4 +1,5 @@
 {
+  "name": "viraldeadengine"
   "private": true,
   "scripts": {
     "dev": "next dev",
