@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import SocialBar from "../../components/SocialBar";
 import LatestVideoEmbeds from "../../components/LatestVideoEmbeds";
 import { SOCIAL } from "../../lib/social";
@@ -46,14 +46,11 @@ export default function DocsPage() {
 
         <section className="rounded-2xl border border-white/10 bg-white/5 p-5">
           <h2 className="text-2xl font-extrabold mb-2">Company</h2>
-          <p><b>DEAD APP CORP</b> â€¢ United States</p>
+          <p><b>DEAD APP CORP</b> • United States</p>
           <p>
             <a className="underline hover:no-underline" href={SOCIAL.gumroad} target="_blank" rel="noopener noreferrer">
-              Get the experiment package on Gumroad â†’
+              Get the experiment package on Gumroad →
             </a>
-          </p>
-          <p className="opacity-80 mt-2">
-            Static hubs: <a className="underline" href="/bio.html">/bio.html</a> â€¢ <a className="underline" href="/latest-videos.html">/latest-videos.html</a>
           </p>
         </section>
       </div>

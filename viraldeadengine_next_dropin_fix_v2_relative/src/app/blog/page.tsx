@@ -1,10 +1,10 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import SocialBar from "../../components/SocialBar";
 import LatestVideoEmbeds from "../../components/LatestVideoEmbeds";
 
 const posts = [
   { href: "/blog/first-test", title: "First Viral Test: Short-Form Media Loops" },
-  { href: "/blog/cute-kittens-loop", title: "Cute Kittens Loop: The 7â€“11 Second Trick" },
+  { href: "/blog/cute-kittens-loop", title: "Cute Kittens Loop: The 7–11 Second Trick" },
   { href: "/blog/baby-bears-in-snow", title: "Baby Bears in Snow: Instant Scroll-Stop" },
   { href: "/blog/oddly-satisfying-marble", title: "Oddly Satisfying: Marble Run Loops" },
   { href: "/blog/calm-rain-window", title: "Calm Rain Window: Background Loops That Convert" },
@@ -12,7 +12,7 @@ const posts = [
   { href: "/blog/tiny-dopamine-checklist", title: "Tiny Dopamine Checklist: Simple Wins" },
   { href: "/blog/pet-affirmations", title: "Pet Affirmations: Wholesome + Shareable" },
   { href: "/blog/cozy-winter-village", title: "Cozy Winter Village: The Comfort Loop" },
-  { href: "/blog/wholesome-dad-jokes", title: "Wholesome Dad Jokes: Comment Bait That Isnâ€™t Toxic" },
+  { href: "/blog/wholesome-dad-jokes", title: "Wholesome Dad Jokes: Comment Bait That Isn’t Toxic" },
   { href: "/blog/quick-focus-reset", title: "Quick Focus Reset: 20 Seconds" },
 ];
 
