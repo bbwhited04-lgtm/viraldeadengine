@@ -1,8 +1,13 @@
 node_modules
 .next
+.env
+.env.Local
+.env.production
 .DS_Store
 
 # Local drop-in packs
 viraldeadengine_dropin/
 viraldeadengine_site_pack/
 
+# local scripts
+.sh
