@@ -10,7 +10,8 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.viraldead.pro"),
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
+
   return (
     <html lang="en">
       <body>
