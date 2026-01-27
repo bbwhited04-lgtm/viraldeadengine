@@ -45,7 +45,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 </main>
 
 
-        <div className="container">{children}</div>
+        
 
         <footer className="siteFooter">
           <div className="container footerInner">
