@@ -22,21 +22,26 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </div>
 
             <nav className="nav">
-              <a href="/" className="navLink">
-                Home
-              </a>
-              <a href="/docs" className="navLink">
-                Docs
-              </a>
-              <a
-                href="https://whitedbreeze.gumroad.com/l/nsjcc"
-                className="navCta"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Buy
-              </a>
-            </nav>
+  <a href="/" className="navLink">Home</a>
+
+  <a href="/blog" className="navLink">
+    Blog
+  </a>
+
+  <a href="/docs" className="navLink">
+    Docs
+  </a>
+
+  <a
+    href="https://whitedbreeze.gumroad.com/l/nsjcc"
+    className="navCta"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Buy
+  </a>
+</nav>
+
           </div>
         </header>
 
