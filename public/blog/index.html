@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Blog — Viral Dead Engine</title>
+  <style>
+    body{margin:0;background:#0e0e0e;color:#fff;font-family:Arial,sans-serif}
+    .wrap{max-width:980px;margin:0 auto;padding:22px 16px 40px}
+    a{color:#fff}
+    .top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-top:16px}
+    .card{border:1px solid rgba(255,255,255,.12);border-radius:16px;overflow:hidden;background:#151515;text-decoration:none}
+    .card img{width:100%;height:160px;object-fit:cover;display:block}
+    .p{padding:14px}
+    .k{opacity:.75;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase}
+    h1{margin:0}
+    h3{margin:8px 0}
+    p{margin:0;opacity:.8;line-height:1.45}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <h1>Blog</h1>
+      <div>
+        <a href="/">Home</a> • <a href="/latest-videos.html">Latest Videos</a> • <a href="/bio.html">Bio</a>
+      </div>
+    </div>
+
+    <div class="grid">
+      <a class="card" href="/blog/01-automation.html">
+        <img src="/assets/img/blog-automation.jpg" alt="Automation"/>
+        <div class="p">
+          <div class="k">Playbook</div>
+          <h3>Build once. Run forever.</h3>
+          <p>A daily posting system that scales without burnout.</p>
+        </div>
+      </a>
+      <a class="card" href="/blog/02-content-engine.html">
+        <img src="/assets/img/blog-content.jpg" alt="Content"/>
+        <div class="p">
+          <div class="k">Strategy</div>
+          <h3>Loops beat explanations.</h3>
+          <p>Why unresolved motion wins and how to ship 10/day.</p>
+        </div>
+      </a>
+      <a class="card" href="/blog/03-infrastructure.html">
+        <img src="/assets/img/blog-infrastructure.jpg" alt="Infrastructure"/>
+        <div class="p">
+          <div class="k">Ops</div>
+          <h3>Own the hub.</h3>
+          <p>Bio page + embeds + blog = one clean funnel.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
