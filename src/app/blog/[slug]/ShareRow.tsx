@@ -32,15 +32,9 @@ export default function ShareRow({ url, title }: { url: string; title: string })
 
       <button
         onClick={async () => {
-          if (navigator?.clipboard) await navigator.clipboard.writeText(url);
-        }}
-        style={{
-          padding: "6px 10px",
-          borderRadius: 10,
-          border: "1px solid rgba(255,255,255,0.18)",
-          background: "rgba(0,0,0,0.25)",
-          color: "inherit",
-          cursor: "pointer",
+          if (navigator?.clipboard) {
+            await navigator.clipboard.writeText(url);
+          }
         }}
       >
         Copy Link
