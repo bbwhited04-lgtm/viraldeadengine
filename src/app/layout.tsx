@@ -39,7 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <a href="/" className="navLink">
                 Home
               </a>
-              <a href="https://viraldead.info" className="navLink" target="_blank" rel="noopener noreferrer">
+              <a href="/docs" className="navLink">Docs</a>
                 Docs
               </a>
               <a
