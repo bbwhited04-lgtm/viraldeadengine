@@ -1,0 +1,66 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Login — Viral Dead Engine</title>
+<link rel="stylesheet" href="/assets/styles.css">
+<style>.panel{border:1px solid rgba(255,255,255,.12);border-radius:16px;background:#151515;padding:16px}
+.input{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.14);background:#0f0f0f;color:#fff}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;align-items:center}</style>
+</head><body><div class="wrap">
+<div class="top"><div><h1 style="margin:0 0 6px">Log in</h1><p style="margin:0;opacity:.82">Access is tied to your Stripe subscription.</p></div>
+<div class="nav"><a href="/">Home</a> · <a href="/checkout.html">Get access</a> · <a href="/account.html">Account</a></div></div>
+<div class="panel">
+  <p style="margin:0 0 10px"><b>API base URL</b></p>
+  <input id="apiBase" class="input" placeholder="https://your-api-domain" />
+  <form id="f" style="display:grid;gap:10px;margin-top:10px">
+    <input name="email" class="input" type="email" placeholder="Email" required>
+    <input name="password" class="input" type="password" placeholder="Password (8+ chars)" required minlength="8">
+    <div class="row">
+      <button class="ts-btn" type="submit">Log in</button>
+      <button class="ts-btn" type="button" id="reg">Register</button>
+      <a class="ts-btnlink" data-track="login_account" href="/account.html">Account →</a>
+    </div>
+  </form>
+  <div id="msg" style="margin-top:10px;opacity:.85"></div>
+</div>
+</div>
+<script>
+const msg=t=>document.getElementById("msg").textContent=t;
+const DEFAULT_API_BASE = localStorage.getItem("vd_api_base") || "http://localhost:8000";
+const apiBase = document.getElementById("apiBase"); apiBase.value = DEFAULT_API_BASE;
+async function call(path,payload){
+  const api=(apiBase.value.trim()||DEFAULT_API_BASE).replace(/\/$/,"");
+  localStorage.setItem("vd_api_base", api);
+  const res=await fetch(api+path,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
+  const data=await res.json().catch(()=>({}));
+  if(!res.ok) throw new Error(data.detail||"Request failed");
+  return data;
+}
+document.getElementById("f").addEventListener("submit", async (e)=>{
+  e.preventDefault();
+  const fd=new FormData(e.target);
+  try{
+    const out=await call("/auth/login",{email:fd.get("email"),password:fd.get("password")});
+    localStorage.setItem("vd_token", out.access_token);
+    msg("Logged in. Token saved.");
+  }catch(err){ msg(err.message); }
+});
+document.getElementById("reg").onclick = async ()=>{
+  const f=document.getElementById("f"); const fd=new FormData(f);
+  try{
+    const out=await call("/auth/register",{email:fd.get("email"),password:fd.get("password")});
+    localStorage.setItem("vd_token", out.access_token);
+    msg("Registered + logged in. Token saved.");
+  }catch(err){ msg(err.message); }
+};
+</script>
+<script src="/assets/turnstile.js"></script>
+
+  <div class="divider"></div>
+  <div class="footer-links">
+    <b>Our network:</b>
+    <a href="https://deadapp.pro" target="_blank" rel="noopener">DeadApp.pro</a> ·
+    <a href="https://insuretoday24.com" target="_blank" rel="noopener">InsureToday24.com</a> ·
+    <a href="https://viraldead.pro" target="_blank" rel="noopener">ViralDead.pro</a>
+  </div>
+
+</body></html>

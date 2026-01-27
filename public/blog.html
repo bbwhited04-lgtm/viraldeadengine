@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Blog — Viral Dead Engine</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script>
+    // Tracking config (edit these)
+    window.VD_TRACKING = {
+      endpoint: "/api/track", // optional; if missing, events are still stored in localStorage
+      utm: {
+        utm_source: "deadapp",
+        utm_medium: "social",
+        utm_campaign: "viral_dead_engine"
+      }
+    };
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <h1>Blog</h1>
+        <p>Quiet infrastructure + content engine updates. Everything routes traffic to owned pages.</p>
+      </div>
+      <div class="nav">
+        <a href="/">Home</a> ·
+        <a href="/latest-videos.html">Latest Videos</a> ·
+        <a href="/bio.html">Bio</a>
+      </div>
+    </div>
+
+    <div class="section-title">
+      <h2>TikTok Turnstile</h2>
+      <div class="hint">Auto-flips • includes caption, hashtags, tracking</div>
+    </div>
+    <section class="turnstile">
+      <div class="ts-shell" data-turnstile data-name="tiktok" data-interval="4200" data-autobuild="tiktok" data-source="/data/tiktok.json" tabindex="0">
+        <div class="ts-head">
+          <h2>Trending Clips</h2>
+          <p>Flips every few seconds • pauses on hover</p>
+        </div>
+        <div class="ts-viewport"><div class="ts-track"><div class="ts-slide"><p>Loading TikTok…</p></div></div></div>
+        <div class="ts-controls">
+          <button class="ts-btn" data-prev type="button">‹</button>
+          <div class="ts-dots" data-dots></div>
+          <button class="ts-btn" data-next type="button">›</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-title">
+      <h2>Instagram Turnstile</h2>
+      <div class="hint">Auto-flips • includes caption, hashtags, tracking</div>
+    </div>
+    <section class="turnstile">
+      <div class="ts-shell" data-turnstile data-name="instagram" data-interval="4800" data-autobuild="instagram" data-source="/data/instagram.json" tabindex="0">
+        <div class="ts-head">
+          <h2>Recent IG Posts</h2>
+          <p>Flips every few seconds</p>
+        </div>
+        <div class="ts-viewport"><div class="ts-track"><div class="ts-slide"><p>Loading Instagram…</p></div></div></div>
+        <div class="ts-controls">
+          <button class="ts-btn" data-prev type="button">‹</button>
+          <div class="ts-dots" data-dots></div>
+          <button class="ts-btn" data-next type="button">›</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-title">
+      <h2>Blog Posts Turnstile</h2>
+      <div class="hint">Cards • images • hashtags • tracking</div>
+    </div>
+    <section class="turnstile">
+      <div class="ts-shell" data-turnstile data-name="blog" data-interval="5200" data-autobuild="blog" data-source="/data/blog.json" tabindex="0">
+        <div class="ts-head">
+          <h2>From the Blog</h2>
+          <p>Infrastructure, automation, distribution</p>
+        </div>
+        <div class="ts-viewport"><div class="ts-track"><div class="ts-slide"><p>Loading blog posts…</p></div></div></div>
+        <div class="ts-controls">
+          <button class="ts-btn" data-prev type="button">‹</button>
+          <div class="ts-dots" data-dots></div>
+          <button class="ts-btn" data-next type="button">›</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-title">
+      <h2>Notes</h2>
+      <div class="hint">How to wire your real embeds</div>
+    </div>
+    <p>
+      Put your real <b>TikTok/Instagram embed URLs</b> in <code>/public/data/tiktok.json</code> and
+      <code>/public/data/instagram.json</code>. For best reliability, store <b>embed URLs</b> (not share URLs).
+      Each CTA link is tagged with UTMs automatically.
+    </p>
+  </div>
+
+  <script src="/assets/turnstile.js"></script>
+
+  <div class="divider"></div>
+  <div class="footer-links">
+    <b>Our network:</b>
+    <a href="https://deadapp.pro" target="_blank" rel="noopener">DeadApp.pro</a> ·
+    <a href="https://insuretoday24.com" target="_blank" rel="noopener">InsureToday24.com</a> ·
+    <a href="https://viraldead.pro" target="_blank" rel="noopener">ViralDead.pro</a>
+  </div>
+
+</body>
+</html>

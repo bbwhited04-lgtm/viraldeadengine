@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Make posts feel powerful (without hype) — Viral Dead Engine</title>
+  
+  <link rel="stylesheet" href="/assets/styles.css">
+  <style>
+    .post-wrap{max-width:980px;margin:0 auto;padding:24px 16px 64px}
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+    .topbar a{opacity:.85;text-decoration:none}
+    .hero{border:1px solid rgba(255,255,255,.12);border-radius:18px;overflow:hidden;background:#121212}
+    .hero img{width:100%;height:360px;object-fit:cover;display:block}
+    .hero .inner{padding:16px 16px 18px}
+    .kicker{opacity:.72;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase}
+    h1{margin:8px 0 8px;font-size:2rem;line-height:1.15}
+    .meta{opacity:.78;font-size:.95rem;display:flex;gap:10px;flex-wrap:wrap}
+    .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .chip{border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);padding:6px 10px;border-radius:999px;font-size:.85rem;opacity:.9}
+    .content{margin-top:18px;line-height:1.75;font-size:1.03rem}
+    .content h2{margin:22px 0 10px;font-size:1.25rem}
+    .content h3{margin:18px 0 8px;font-size:1.05rem;opacity:.95}
+    .content ul{margin:10px 0 10px 18px}
+    .callout{border:1px solid rgba(255,255,255,.12);border-radius:16px;background:rgba(255,255,255,.04);padding:14px;margin:18px 0}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:14px 0}
+    .card{border:1px solid rgba(255,255,255,.12);border-radius:16px;background:#151515;padding:14px}
+    .cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.14);text-decoration:none;font-weight:900}
+    .divider{height:1px;background:rgba(255,255,255,.10);margin:18px 0}
+    .footer-links{opacity:.8;font-size:.95rem;margin-top:22px}
+    .footer-links a{opacity:.9}
+  </style>
+
+  <script>
+    window.VD_TRACKING = window.VD_TRACKING || {
+      endpoint: "/api/track",
+      utm: { utm_source:"viraldead", utm_medium:"blog", utm_campaign:"vde" }
+    };
+  </script>
+</head>
+<body>
+  <div class="post-wrap">
+    <div class="topbar">
+      <div><a href="/blog.html">← Back to Blog</a></div>
+      <div style="opacity:.85">
+        <a href="/course.html">Course</a> · <a href="/how-it-works.html">How it works</a> · <a href="/checkout.html">Get access</a>
+      </div>
+    </div>
+
+    <div class="hero">
+      <img src="/assets/placeholder.jpg" alt="">
+      <div class="inner">
+        <div class="kicker">WRITING</div>
+        <h1>Make posts feel powerful (without hype)</h1>
+        <div class="meta">3 min read <span style="opacity:.6">•</span> Practical. Calm. Repeatable.</div>
+        <div class="chips"><span class="chip">#copywriting</span>
+<span class="chip">#clarity</span>
+<span class="chip">#cta</span></div>
+      </div>
+    </div>
+
+    <div class="content">
+      
+<p>
+If your page feels “plain,” it’s usually missing two things: <b>structure</b> and <b>direction</b>.
+A blog post doesn’t need to be long— it needs to be <i>useful</i> and <i>movable</i>.
+</p>
+
+<h2>Make it skimmable</h2>
+<div class="grid">
+  <div class="card"><b>Headers</b><p style="margin:8px 0 0">Every 6–10 lines add a heading. Readers are scanning.</p></div>
+  <div class="card"><b>Callouts</b><p style="margin:8px 0 0">Highlight the rule, the mistake, or the step to take.</p></div>
+  <div class="card"><b>One CTA</b><p style="margin:8px 0 0">Tell them what to do next—one clear next step.</p></div>
+</div>
+
+<h2>Make it “moving” without manipulation</h2>
+<ul>
+  <li>Speak to the real pain: chaos, guessing, burnout.</li>
+  <li>Offer relief: a calm system and a simple first step.</li>
+  <li>Prove it with clarity: the process and what’s included.</li>
+</ul>
+
+<div class="callout">
+  <b>Write like this:</b> “If you’re tired of guessing, here’s the calm next step.”
+</div>
+
+
+      <div class="callout">
+        <b>Move this into action today:</b>
+        pick one idea, make 3 variants, route traffic to your blog, and track clicks.
+        <div class="cta-row">
+          <a class="btn" data-track="post_cta_course" href="/course.html">Start the Sprint →</a>
+          <a class="btn" data-track="post_cta_checkout" href="/checkout.html">Get access →</a>
+          <a class="btn" data-track="post_cta_blog" href="/blog.html">More posts →</a>
+        </div>
+      </div>
+      
+  <div class="divider"></div>
+  <div class="footer-links">
+    <b>Our network:</b>
+    <a href="https://deadapp.pro" target="_blank" rel="noopener">DeadApp.pro</a> ·
+    <a href="https://insuretoday24.com" target="_blank" rel="noopener">InsureToday24.com</a> ·
+    <a href="https://viraldead.pro" target="_blank" rel="noopener">ViralDead.pro</a>
+  </div>
+
+    </div>
+  </div>
+  <script src="/assets/turnstile.js"></script>
+</body>
+</html>

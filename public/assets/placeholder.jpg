@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1600">
+  <rect width="100%" height="100%" fill="#111"/>
+  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle"
+        fill="#ffffff" font-family="Arial" font-size="48" opacity="0.65">Replace image</text>
+</svg>

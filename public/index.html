@@ -3,191 +3,110 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Viral Dead Engine</title>
-  <meta name="description" content="Viral Dead Engine — AI systems, apps, and automation pipelines built to scale."/>
-
-  <!-- OpenGraph / Twitter -->
-  <meta property="og:title" content="Viral Dead Engine"/>
-  <meta property="og:description" content="AI • Apps • Automation — Built to scale."/>
-  <meta property="og:image" content="https://viraldead.pro/assets/img/og-1200x630.jpg"/>
-  <meta property="og:url" content="https://viraldead.pro/"/>
-  <meta name="twitter:card" content="summary_large_image"/>
-
+  <title>Viral Dead Engine — Create every day without chaos</title>
+  <link rel="stylesheet" href="/assets/styles.css">
   <style>
-    :root {
-      --bg:#0b0b12; --card:#12121c; --muted:#a7a7b6; --text:#f2f2f7;
-      --border:rgba(255,255,255,.10); --glow:rgba(140,140,255,.18);
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0; font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      background:radial-gradient(800px 500px at 50% 0%, var(--glow), transparent 60%), var(--bg);
-      color:var(--text);
-    }
-    a{color:inherit}
-    .wrap{max-width:1100px; margin:0 auto; padding:0 18px}
-    header{position:sticky; top:0; backdrop-filter: blur(10px); background:rgba(11,11,18,.65);
-      border-bottom:1px solid var(--border); z-index:10}
-    .nav{display:flex; align-items:center; justify-content:space-between; padding:12px 0; gap:12px}
-    .brand{display:flex; align-items:center; gap:10px; text-decoration:none}
-    .brand img{width:34px; height:34px; border-radius:10px; border:1px solid var(--border)}
-    .brand strong{letter-spacing:.2px}
-    .navlinks{display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end}
-    .navlinks a{text-decoration:none; opacity:.9; padding:8px 10px; border-radius:10px; border:1px solid transparent}
-    .navlinks a:hover{border-color:var(--border); background:rgba(255,255,255,.04)}
-
-    .hero{padding:44px 0 26px}
-    .heroCard{
-      display:grid; grid-template-columns:1.2fr .8fr; gap:18px; align-items:stretch;
-      border:1px solid var(--border); border-radius:22px; overflow:hidden; background:rgba(18,18,28,.72);
-      box-shadow: 0 10px 40px rgba(0,0,0,.35);
-    }
-    .heroLeft{padding:26px}
-    h1{margin:0 0 10px; font-size:2.4rem; line-height:1.05}
-    .tagline{color:var(--muted); margin:0 0 18px; font-size:1.05rem; line-height:1.4}
-    .ctaRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
-    .btn{display:inline-block; text-decoration:none; font-weight:800; padding:11px 14px; border-radius:14px;
-      border:1px solid var(--border); background:rgba(255,255,255,.05)}
-    .btn:hover{background:rgba(255,255,255,.10)}
-    .btnPrimary{background:rgba(140,140,255,.18); border-color:rgba(160,160,255,.35)}
-    .btnPrimary:hover{background:rgba(140,140,255,.25)}
-    .mini{font-size:.92rem; color:var(--muted); margin-top:14px}
-
-    .heroRight{
-      background:url("/assets/img/hero-1600x900.jpg") center/cover no-repeat;
-      min-height:260px;
-      position:relative;
-    }
-    .heroRight:after{
-      content:"";
-      position:absolute; inset:0;
-      background:linear-gradient(90deg, rgba(18,18,28,.85), rgba(18,18,28,.30) 55%, rgba(18,18,28,.85));
-    }
-
-    .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:18px 0 6px}
-    .card{border:1px solid var(--border); border-radius:18px; background:rgba(18,18,28,.72); padding:16px}
-    .card h3{margin:0 0 6px}
-    .card p{margin:0; color:var(--muted); line-height:1.45}
-
-    .sectionTitle{margin:34px 0 10px; font-size:1.3rem}
-    .blogGrid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:12px 0 40px}
-    .post{text-decoration:none; border:1px solid var(--border); border-radius:18px; overflow:hidden;
-      background:rgba(18,18,28,.72)}
-    .post img{display:block; width:100%; height:170px; object-fit:cover}
-    .post .p{padding:14px}
-    .post .k{font-size:.8rem; color:var(--muted); letter-spacing:.12em; text-transform:uppercase}
-    .post h4{margin:8px 0 8px; font-size:1.05rem}
-    .post p{margin:0; color:var(--muted); line-height:1.45}
-    .post:hover{transform:translateY(-1px)}
-
-    footer{border-top:1px solid var(--border); padding:18px 0 30px; color:var(--muted)}
-    .footRow{display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap}
-    .social{display:flex; gap:10px; flex-wrap:wrap}
-    .social a{text-decoration:none; padding:8px 10px; border-radius:12px; border:1px solid var(--border)}
-    .social a:hover{background:rgba(255,255,255,.05)}
-
-    @media (max-width: 920px) {
-      .heroCard{grid-template-columns:1fr}
-      .heroRight{min-height:220px}
-      .grid{grid-template-columns:1fr}
-      .blogGrid{grid-template-columns:1fr}
-    }
+    .panel{border:1px solid rgba(255,255,255,.12);border-radius:16px;background:#151515;padding:16px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+    .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .small{opacity:.75;font-size:.95rem;line-height:1.55}
+    .section-title{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:18px 0 10px}
+    .section-title h2{margin:0;font-size:1.1rem}
+    .section-title .hint{opacity:.65;font-size:.9rem}
+    .bullets ul{margin:10px 0 0;padding-left:18px;opacity:.92;line-height:1.7}
+    .quote{border:1px solid rgba(255,255,255,.12);border-radius:16px;background:#151515;padding:14px;opacity:.92}
   </style>
+  <script>
+    window.VD_TRACKING = window.VD_TRACKING || {
+      endpoint: "/api/track",
+      utm: { utm_source:"deadapp", utm_medium:"site", utm_campaign:"viral_dead_engine" }
+    };
+  </script>
 </head>
 <body>
-  <header>
-    <div class="wrap nav">
-      <a class="brand" href="/">
-        <img src="/assets/img/logo-mark-512.png" alt="VDE"/>
-        <strong>Viral Dead Engine</strong>
-      </a>
-      <nav class="navlinks">
-        <a href="/latest-videos.html">Latest Videos</a>
-        <a href="/bio.html">Bio Hub</a>
-        <a href="/blog/">Blog</a>
-        <a href="https://www.tiktok.com/@viraldeadengine" target="_blank" rel="noopener noreferrer">TikTok</a>
-        <a href="https://www.instagram.com/viraldeadengine/" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a href="https://www.threads.com/@viraldeadengine" target="_blank" rel="noopener noreferrer">Threads</a>
-        <a href="https://x.com/ViralDeadEngine" target="_blank" rel="noopener noreferrer">X</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="wrap hero">
-    <section class="heroCard">
-      <div class="heroLeft">
-        <h1>AI • Apps • Automation</h1>
-        <p class="tagline">
-          We build systems that turn content into momentum: repeatable pipelines, fast shipping, and distribution across every major platform.
-        </p>
-        <div class="ctaRow">
-          <a class="btn btnPrimary" href="/latest-videos.html">▶️ Watch the latest</a>
-          <a class="btn" href="/blog/">Read the blog</a>
-          <a class="btn" href="/docs/media-kit.html">Download media kit</a>
-        </div>
-        <div class="mini">
-          Handle: <b>@viraldeadengine</b> • Canonical site: <b>https://viraldead.pro</b>
-        </div>
+  <div class="wrap">
+    
+    <div class="top">
+      <div>
+        <h1 style="margin:0 0 6px">Create every day without chaos.</h1>
+        <p style="margin:0;opacity:.82">A calm engine for short-form content that converts—anchored to owned pages and measurable links.</p>
       </div>
-      <div class="heroRight" aria-hidden="true"></div>
-    </section>
-
-    <h2 class="sectionTitle">What we do</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Content Engine</h3>
-        <p>Loopable short-form visuals + repeatable hooks designed for TikTok, IG Reels, Threads, and X.</p>
-      </div>
-      <div class="card">
-        <h3>Automation</h3>
-        <p>Templates, scripts, and systems that reduce friction so you can publish at volume without chaos.</p>
-      </div>
-      <div class="card">
-        <h3>Infrastructure</h3>
-        <p>Clean landing pages, bio hubs, video embeds, and a simple blog layer to capture long-tail traffic.</p>
+      <div class="nav">
+        <a href="/" style="opacity:1;font-weight:800">Home</a> ·
+        <a href="/course.html" >Course</a> ·
+        <a href="/how-it-works.html" >How it works</a> ·
+        <a href="/blog.html">Blog</a> ·
+        <a href="/checkout.html" >Get access</a>
       </div>
     </div>
+    
 
-    <h2 class="sectionTitle">Latest posts</h2>
-    <div class="blogGrid">
-      <a class="post" href="/blog/01-automation.html">
-        <img src="/assets/img/blog-automation.jpg" alt="Automation"/>
-        <div class="p">
-          <div class="k">Playbook</div>
-          <h4>Build once. Run forever.</h4>
-          <p>How to design a daily posting system that doesn’t burn you out.</p>
-        </div>
-      </a>
-      <a class="post" href="/blog/02-content-engine.html">
-        <img src="/assets/img/blog-content.jpg" alt="Content Engine"/>
-        <div class="p">
-          <div class="k">Strategy</div>
-          <h4>Loops beat explanations.</h4>
-          <p>Why short, unresolved visuals win and how to ship 10/day.</p>
-        </div>
-      </a>
-      <a class="post" href="/blog/03-infrastructure.html">
-        <img src="/assets/img/blog-infrastructure.jpg" alt="Infrastructure"/>
-        <div class="p">
-          <div class="k">Ops</div>
-          <h4>Own the hub.</h4>
-          <p>Bio page + embeds + blog = one clean funnel across platforms.</p>
-        </div>
-      </a>
-    </div>
-  </main>
+    <div class="panel">
+      
+<p style="margin:0 0 12px">
+  Most people don’t need more motivation. They need a calm system that turns one idea into
+  <b>videos, captions, hashtags, blog posts, and trackable links</b>—without chaos.
+</p>
+<div class="cta">
+  <a class="ts-btnlink" data-track="home_primary" href="/course.html">Start the 14‑Day Sprint →</a>
+  <a class="ts-btnlink" data-track="home_secondary" href="/how-it-works.html">See how it works →</a>
+  <a class="ts-btnlink" data-track="home_blog" href="/blog.html">Read the blog →</a>
+</div>
 
-  <footer>
-    <div class="wrap footRow">
-      <div>© Viral Dead Engine • viraldead.pro</div>
-      <div class="social">
-        <a href="https://www.tiktok.com/@viraldeadengine" target="_blank" rel="noopener noreferrer">TikTok</a>
-        <a href="https://www.instagram.com/viraldeadengine/" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a href="https://www.threads.com/@viraldeadengine" target="_blank" rel="noopener noreferrer">Threads</a>
-        <a href="https://x.com/ViralDeadEngine" target="_blank" rel="noopener noreferrer">X</a>
-        <a href="https://www.facebook.com/profile.php?id=61587240537503" target="_blank" rel="noopener noreferrer">Facebook</a>
-      </div>
     </div>
-  </footer>
+
+    
+<div class="section-title"><h2>If this feels familiar, you’re in the right place</h2><div class="hint">Empathy first, then a plan</div></div>
+<div class="panel">
+  <p style="margin:0 0 10px">You open TikTok or Instagram and everyone looks like they’ve figured it out—posting daily, growing, winning.</p>
+  <div class="bullets">
+    <ul>
+      <li>Overthinking every post</li>
+      <li>Unsure what actually works</li>
+      <li>Juggling tools that don’t talk to each other</li>
+      <li>Building on platforms you don’t own</li>
+    </ul>
+  </div>
+  <p style="margin:10px 0 0"><b>This isn’t a motivation problem.</b> It’s a systems problem.</p>
+</div>
+
+<div class="section-title"><h2>What makes Viral Dead Engine different</h2><div class="hint">Simple, repeatable, measurable</div></div>
+<div class="grid">
+  <div class="panel"><b>One input → many outputs</b><p style="margin:8px 0 0">Turn one theme into multiple short clips, captions, hashtags, and a clean blog entry point.</p></div>
+  <div class="panel"><b>Owned pages, not rented attention</b><p style="margin:8px 0 0">Social drives to your site. Your site holds the story, the depth, and the conversion.</p></div>
+  <div class="panel"><b>Tracking built in</b><p style="margin:8px 0 0">UTMs + click logging so you stop guessing and start scaling what performs.</p></div>
+</div>
+
+<div class="section-title"><h2>Quiet confidence</h2><div class="hint">No hype. Just forward motion.</div></div>
+<div class="quote">
+  “You’re not buying motivation. You’re buying clarity, structure, and a system that moves you forward—daily.”
+</div>
+
+<div class="section-title"><h2>Start here</h2><div class="hint">Two clicks to begin</div></div>
+<div class="panel">
+  <p style="margin:0 0 12px">If you want output you can sustain, start the sprint. If you want a quick overview, watch the walkthrough.</p>
+  <div class="cta">
+    <a class="ts-btnlink" data-track="home_start_sprint" href="/course.html">Start the Sprint →</a>
+    <a class="ts-btnlink" data-track="home_walkthrough" href="/how-it-works.html">Watch the walkthrough →</a>
+  </div>
+</div>
+
+
+    <div class="small" style="margin-top:18px">
+      By visiting this page, you agree to our <a href="/terms.html">Terms</a> and <a href="/privacy.html">Privacy Policy</a>.
+      This site is not affiliated with, endorsed by, or sponsored by any third-party platforms.
+    </div>
+  </div>
+
+  <script src="/assets/turnstile.js"></script>
+
+  <div class="divider"></div>
+  <div class="footer-links">
+    <b>Our network:</b>
+    <a href="https://deadapp.pro" target="_blank" rel="noopener">DeadApp.pro</a> ·
+    <a href="https://insuretoday24.com" target="_blank" rel="noopener">InsureToday24.com</a> ·
+    <a href="https://viraldead.pro" target="_blank" rel="noopener">ViralDead.pro</a>
+  </div>
+
 </body>
 </html>

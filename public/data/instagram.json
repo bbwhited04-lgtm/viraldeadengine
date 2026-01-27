@@ -1,0 +1,32 @@
+{
+  "items": [
+    {
+      "title": "IG post \u2014 launch update",
+      "embed_url": "https://www.instagram.com/p/AAAAAAAAAAA/embed",
+      "url": "https://www.instagram.com/p/AAAAAAAAAAA/",
+      "image": "/assets/placeholder.jpg",
+      "caption": "New post routing traffic to the blog engine.",
+      "hashtags": [
+        "#deadapp",
+        "#startup",
+        "#automation",
+        "#growth"
+      ],
+      "cta_url": "/blog/03-infrastructure.html"
+    },
+    {
+      "title": "IG post \u2014 content engine",
+      "embed_url": "https://www.instagram.com/reel/BBBBBBBBBBB/embed",
+      "url": "https://www.instagram.com/reel/BBBBBBBBBBB/",
+      "image": "/assets/placeholder.jpg",
+      "caption": "Reel that points into a deeper owned-page story.",
+      "hashtags": [
+        "#reels",
+        "#ai",
+        "#contentengine",
+        "#deadapp"
+      ],
+      "cta_url": "/blog/02-content-engine.html"
+    }
+  ]
+}

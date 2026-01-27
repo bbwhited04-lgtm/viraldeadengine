@@ -1,57 +1,96 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Own the hub. — Viral Dead Engine</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Why boring wins — Viral Dead Engine</title>
+  <link rel="stylesheet" href="/assets/styles.css">
   <style>
-    body{margin:0;background:#0e0e0e;color:#fff;font-family:Arial,sans-serif}
-    .wrap{max-width:860px;margin:0 auto;padding:22px 16px 50px}
-    a{color:#fff}
-    .top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}
-    .hero{margin-top:14px;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.12)}
-    .hero img{width:100%;height:260px;object-fit:cover;display:block}
-    h1{margin:18px 0 8px;line-height:1.1}
-    .meta{opacity:.75;margin-bottom:14px}
-    p{opacity:.85;line-height:1.55}
-    .callout{margin:18px 0;padding:14px;border-radius:16px;background:#151515;border:1px solid rgba(255,255,255,.12)}
-    ul{opacity:.85;line-height:1.55}
-    .btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-    .btn{text-decoration:none;font-weight:800;padding:10px 12px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:#1f1f1f}
-    .btn:hover{background:#333}
+    .post-wrap{max-width:900px;margin:0 auto;padding:24px 16px 56px}
+    .crumbs a{opacity:.85}
+    .hero{border:1px solid rgba(255,255,255,.12);border-radius:16px;overflow:hidden;background:#111;margin-top:14px}
+    .hero img{width:100%;height:320px;object-fit:cover;display:block}
+    .hero .inner{padding:14px}
+    .kicker{opacity:.72;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase}
+    h1{margin:8px 0 8px}
+    .meta{opacity:.75}
+    .content{margin-top:18px}
+    .content h2{margin:22px 0 10px;font-size:1.15rem}
+    .content ul{margin:8px 0 8px 18px}
+    .callout{border:1px solid rgba(255,255,255,.12);border-radius:14px;background:rgba(255,255,255,.04);padding:14px;margin:18px 0}
+    .tagline{opacity:.8;font-size:.95rem}
+    .cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.14);text-decoration:none;font-weight:900}
+    code{background:rgba(255,255,255,.06);padding:2px 6px;border-radius:8px}
   </style>
+  <script>
+    window.VD_TRACKING = window.VD_TRACKING || {
+      endpoint: "/api/track",
+      utm: { utm_source:"deadapp", utm_medium:"blog", utm_campaign:"viral_dead_engine" }
+    };
+  </script>
 </head>
 <body>
-  <div class="wrap">
-    <div class="top">
-      <div><a href="/blog/">← Blog</a></div>
-      <div><a href="/">Home</a> • <a href="/latest-videos.html">Latest Videos</a> • <a href="/bio.html">Bio</a></div>
+  <div class="post-wrap">
+    <div class="crumbs">
+      <a href="/">Home</a> · <a href="/blog.html">Blog</a>
     </div>
 
-    <div class="hero"><img src="/assets/img/blog-infrastructure.jpg" alt=""></div>
+    <div class="hero">
+      <img src="/assets/placeholder.jpg" alt="">
+      <div class="inner">
+        <div class="kicker">Infrastructure</div>
+        <h1>Why boring wins</h1>
+        <div class="meta">5 min read · <span class="tagline">#infrastructure #seo #stability</span></div>
+      </div>
+    </div>
 
-    <h1>Own the hub.</h1>
-    <div class="meta">Ops • SEO • Distribution</div>
+    <div class="content">
+      
+<p>
+Infrastructure is the part no one claps for. It’s also the part that keeps you alive when platforms change rules overnight.
+</p>
 
-    <p>Your social profiles are rented land. Your hub is owned land.</p>
-     <div class="callout"><b>Minimum stack</b>
-       <ul>
-         <li><b>/bio.html</b> for profile links</li>
-         <li><b>/latest-videos.html</b> for embeds</li>
-         <li><b>/blog/</b> for long-tail traffic</li>
-       </ul>
-     </div>
-     <p>Keep everything consistent: name, handle, and one canonical domain: <b>viraldead.pro</b>.</p>
+<h2>1) Own your entry points</h2>
+<p>
+If all traffic lives inside TikTok/IG, you don’t own a funnel — you’re renting attention.
+Your blog + site are the permanent memory of the business.
+</p>
 
-    <div class="callout">
-      <b>Follow @viraldeadengine</b><br/>
-      <div class="btnrow">
-        <a class="btn" href="https://www.tiktok.com/@viraldeadengine" target="_blank" rel="noopener noreferrer">TikTok</a>
-        <a class="btn" href="https://www.instagram.com/viraldeadengine/" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a class="btn" href="https://www.threads.com/@viraldeadengine" target="_blank" rel="noopener noreferrer">Threads</a>
-        <a class="btn" href="https://x.com/ViralDeadEngine" target="_blank" rel="noopener noreferrer">X</a>
-        <a class="btn" href="https://www.facebook.com/profile.php?id=61587240537503" target="_blank" rel="noopener noreferrer">Facebook</a>
+<h2>2) Speed and stability matter more than “features”</h2>
+<ul>
+  <li>Static pages load fast</li>
+  <li>Simple carousels don’t break</li>
+  <li>Tracking endpoints can be tiny but powerful</li>
+</ul>
+
+<h2>3) Authentication: keep it minimal</h2>
+<p>
+For a “user backend”, you need only:
+</p>
+<ul>
+  <li>Register</li>
+  <li>Login (JWT)</li>
+  <li>Current user endpoint</li>
+  <li>Password hashing</li>
+</ul>
+
+<h2>4) Add complexity only when revenue demands it</h2>
+<p>
+Start with a stable base. Add roles, subscriptions, admin dashboards later.
+</p>
+
+
+      <div class="callout">
+        <b>Next step:</b> if you want this post to drive traffic, add one clear CTA and track it.
+        <div class="cta-row">
+          <a class="btn" data-track="post_cta_primary" href="/blog.html">Back to Blog →</a>
+          <a class="btn" data-track="post_cta_videos" href="/latest-videos.html">Latest Videos →</a>
+        </div>
       </div>
     </div>
   </div>
+
+  <script src="/assets/turnstile.js"></script>
 </body>
 </html>

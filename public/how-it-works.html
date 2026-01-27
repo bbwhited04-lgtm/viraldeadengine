@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>How it works — Viral Dead Engine</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <style>
+    .panel{border:1px solid rgba(255,255,255,.12);border-radius:16px;background:#151515;padding:16px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+    .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .small{opacity:.75;font-size:.95rem;line-height:1.55}
+    .section-title{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:18px 0 10px}
+    .section-title h2{margin:0;font-size:1.1rem}
+    .section-title .hint{opacity:.65;font-size:.9rem}
+    .bullets ul{margin:10px 0 0;padding-left:18px;opacity:.92;line-height:1.7}
+    .quote{border:1px solid rgba(255,255,255,.12);border-radius:16px;background:#151515;padding:14px;opacity:.92}
+  </style>
+  <script>
+    window.VD_TRACKING = window.VD_TRACKING || {
+      endpoint: "/api/track",
+      utm: { utm_source:"deadapp", utm_medium:"site", utm_campaign:"viral_dead_engine" }
+    };
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    
+    <div class="top">
+      <div>
+        <h1 style="margin:0 0 6px">How it works (no fluff).</h1>
+        <p style="margin:0;opacity:.82">A calm flow that turns one theme into daily output you can measure.</p>
+      </div>
+      <div class="nav">
+        <a href="/" >Home</a> ·
+        <a href="/course.html" >Course</a> ·
+        <a href="/how-it-works.html" style="opacity:1;font-weight:800">How it works</a> ·
+        <a href="/blog.html">Blog</a> ·
+        <a href="/checkout.html" >Get access</a>
+      </div>
+    </div>
+    
+
+    <div class="panel">
+      
+<p style="margin:0 0 12px">
+  The flow is simple: one theme becomes multiple short clips, captions, hashtags, and a clean blog post entry point—with tracking.
+</p>
+<div class="cta">
+  <a class="ts-btnlink" data-track="how_primary" href="/course.html">Start the Sprint →</a>
+  <a class="ts-btnlink" data-track="how_secondary" href="/blog.html">See the Blog →</a>
+</div>
+
+    </div>
+
+    
+<div class="section-title"><h2>Quick walkthrough video</h2><div class="hint">Replace VIDEO_ID with yours</div></div>
+<div class="panel">
+  <div class="ts-media" style="grid-template-columns:1.6fr 1fr">
+    <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID_REPLACE" loading="lazy" title="How to use"></iframe>
+    <div class="ts-meta">
+      <h3>5 steps</h3>
+      <p><b>1)</b> Add embeds + captions + hashtags in JSON</p>
+      <p><b>2)</b> Carousels rotate, page stays clean</p>
+      <p><b>3)</b> CTAs add UTMs automatically</p>
+      <p><b>4)</b> Clicks post to <code>/api/track</code></p>
+      <p><b>5)</b> Double down on what performs</p>
+      <a class="ts-btnlink" data-track="how_open_checkout" href="/checkout.html">Get access →</a>
+    </div>
+  </div>
+</div>
+
+<div class="section-title"><h2>Where you edit content</h2><div class="hint">No-code edits</div></div>
+<div class="panel bullets">
+  <ul>
+    <li><code>/public/data/tiktok.json</code> — TikTok embeds, captions, hashtags, CTA links</li>
+    <li><code>/public/data/instagram.json</code> — Instagram embeds, captions, hashtags, CTA links</li>
+    <li><code>/public/data/blog.json</code> — blog cards (title, excerpt, image, hashtags)</li>
+  </ul>
+</div>
+
+<div class="section-title"><h2>Tracking that doesn’t annoy users</h2><div class="hint">Measurable, not creepy</div></div>
+<div class="panel">
+  <p style="margin:0 0 10px">
+    Every CTA link is tagged with UTMs and can log a click event to your backend. You get attribution without popups, without clutter.
+  </p>
+  <p class="small">Tip: Set <code>window.VD_TRACKING.endpoint</code> to your deployed API and you’re live.</p>
+</div>
+
+
+    <div class="small" style="margin-top:18px">
+      By visiting this page, you agree to our <a href="/terms.html">Terms</a> and <a href="/privacy.html">Privacy Policy</a>.
+      This site is not affiliated with, endorsed by, or sponsored by any third-party platforms.
+    </div>
+  </div>
+
+  <script src="/assets/turnstile.js"></script>
+
+  <div class="divider"></div>
+  <div class="footer-links">
+    <b>Our network:</b>
+    <a href="https://deadapp.pro" target="_blank" rel="noopener">DeadApp.pro</a> ·
+    <a href="https://insuretoday24.com" target="_blank" rel="noopener">InsureToday24.com</a> ·
+    <a href="https://viraldead.pro" target="_blank" rel="noopener">ViralDead.pro</a>
+  </div>
+
+</body>
+</html>

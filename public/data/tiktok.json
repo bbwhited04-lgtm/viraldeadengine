@@ -1,0 +1,33 @@
+{
+  "items": [
+    {
+      "title": "Bear & kitten \u2014 clip 1",
+      "embed_url": "https://www.tiktok.com/embed/v2/0000000000000000000",
+      "url": "https://www.tiktok.com/@deadapppro/video/0000000000000000000",
+      "image": "/assets/placeholder.jpg",
+      "caption": "Soft viral loop that points back to owned content.",
+      "hashtags": [
+        "#bear",
+        "#kitten",
+        "#wholesome",
+        "#viral",
+        "#deadapp"
+      ],
+      "cta_url": "/blog/02-content-engine.html"
+    },
+    {
+      "title": "Bear & kitten \u2014 clip 2",
+      "embed_url": "https://www.tiktok.com/embed/v2/1111111111111111111",
+      "url": "https://www.tiktok.com/@deadapppro/video/1111111111111111111",
+      "image": "/assets/placeholder.jpg",
+      "caption": "Second variation with different hook text.",
+      "hashtags": [
+        "#cute",
+        "#animals",
+        "#shorts",
+        "#viraldead"
+      ],
+      "cta_url": "/blog/01-automation.html"
+    }
+  ]
+}

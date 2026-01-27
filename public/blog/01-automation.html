@@ -1,57 +1,104 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Build once. Run forever. — Viral Dead Engine</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>How the engine runs — Viral Dead Engine</title>
+  <link rel="stylesheet" href="/assets/styles.css">
   <style>
-    body{margin:0;background:#0e0e0e;color:#fff;font-family:Arial,sans-serif}
-    .wrap{max-width:860px;margin:0 auto;padding:22px 16px 50px}
-    a{color:#fff}
-    .top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}
-    .hero{margin-top:14px;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.12)}
-    .hero img{width:100%;height:260px;object-fit:cover;display:block}
-    h1{margin:18px 0 8px;line-height:1.1}
-    .meta{opacity:.75;margin-bottom:14px}
-    p{opacity:.85;line-height:1.55}
-    .callout{margin:18px 0;padding:14px;border-radius:16px;background:#151515;border:1px solid rgba(255,255,255,.12)}
-    ul{opacity:.85;line-height:1.55}
-    .btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-    .btn{text-decoration:none;font-weight:800;padding:10px 12px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:#1f1f1f}
-    .btn:hover{background:#333}
+    .post-wrap{max-width:900px;margin:0 auto;padding:24px 16px 56px}
+    .crumbs a{opacity:.85}
+    .hero{border:1px solid rgba(255,255,255,.12);border-radius:16px;overflow:hidden;background:#111;margin-top:14px}
+    .hero img{width:100%;height:320px;object-fit:cover;display:block}
+    .hero .inner{padding:14px}
+    .kicker{opacity:.72;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase}
+    h1{margin:8px 0 8px}
+    .meta{opacity:.75}
+    .content{margin-top:18px}
+    .content h2{margin:22px 0 10px;font-size:1.15rem}
+    .content ul{margin:8px 0 8px 18px}
+    .callout{border:1px solid rgba(255,255,255,.12);border-radius:14px;background:rgba(255,255,255,.04);padding:14px;margin:18px 0}
+    .tagline{opacity:.8;font-size:.95rem}
+    .cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.14);text-decoration:none;font-weight:900}
+    code{background:rgba(255,255,255,.06);padding:2px 6px;border-radius:8px}
   </style>
+  <script>
+    window.VD_TRACKING = window.VD_TRACKING || {
+      endpoint: "/api/track",
+      utm: { utm_source:"deadapp", utm_medium:"blog", utm_campaign:"viral_dead_engine" }
+    };
+  </script>
 </head>
 <body>
-  <div class="wrap">
-    <div class="top">
-      <div><a href="/blog/">← Blog</a></div>
-      <div><a href="/">Home</a> • <a href="/latest-videos.html">Latest Videos</a> • <a href="/bio.html">Bio</a></div>
+  <div class="post-wrap">
+    <div class="crumbs">
+      <a href="/">Home</a> · <a href="/blog.html">Blog</a>
     </div>
 
-    <div class="hero"><img src="/assets/img/blog-automation.jpg" alt=""></div>
+    <div class="hero">
+      <img src="/assets/placeholder.jpg" alt="">
+      <div class="inner">
+        <div class="kicker">Automation</div>
+        <h1>How the engine runs</h1>
+        <div class="meta">4 min read · <span class="tagline">#automation #workflow #deadapp</span></div>
+      </div>
+    </div>
 
-    <h1>Build once. Run forever.</h1>
-    <div class="meta">Playbook • Systems • Daily output</div>
+    <div class="content">
+      
+<p>
+This is the “boring” part of the viral engine: automation, guardrails, and repeatable workflows.
+If you want to output daily without burning down your life, the system has to be calm.
+</p>
 
-    <p>High volume only works when you remove decisions. Your job is to build a pipeline that ships content without drama.</p>
-     <div class="callout"><b>Daily baseline</b>
-       <ul>
-         <li>3 short videos posted everywhere</li>
-         <li>1 repurpose or reply</li>
-         <li>Update your hub page weekly</li>
-       </ul>
-     </div>
-     <p>Keep the visuals loopable, the text clear, and the call-to-action consistent: <b>viraldead.pro</b>.</p>
+<h2>1) The rule: one input, many outputs</h2>
+<p>
+Pick a single “source of truth” for the day (a story, a theme, a headline, a hook) and generate multiple formats from it:
+short video hooks, captions, hashtags, and a blog post that hosts the “real” content.
+</p>
+<ul>
+  <li>1 theme → 10 short clips (variations)</li>
+  <li>1 blog post → 5 social captions</li>
+  <li>1 landing URL → trackable links for every platform</li>
+</ul>
 
-    <div class="callout">
-      <b>Follow @viraldeadengine</b><br/>
-      <div class="btnrow">
-        <a class="btn" href="https://www.tiktok.com/@viraldeadengine" target="_blank" rel="noopener noreferrer">TikTok</a>
-        <a class="btn" href="https://www.instagram.com/viraldeadengine/" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a class="btn" href="https://www.threads.com/@viraldeadengine" target="_blank" rel="noopener noreferrer">Threads</a>
-        <a class="btn" href="https://x.com/ViralDeadEngine" target="_blank" rel="noopener noreferrer">X</a>
-        <a class="btn" href="https://www.facebook.com/profile.php?id=61587240537503" target="_blank" rel="noopener noreferrer">Facebook</a>
+<h2>2) Keep a content queue (not a brainstorm)</h2>
+<p>
+Instead of “what should we post?”, maintain a queue of structured items that can ship.
+Each item has: <code>title</code>, <code>hook</code>, <code>visual prompt</code>, <code>caption</code>, <code>hashtags</code>, and a <code>CTA</code>.
+</p>
+
+<h2>3) Make failure modes explicit</h2>
+<p>
+Automation breaks in predictable ways. Handle them once, then forget about them:
+</p>
+<ul>
+  <li>Missing media → show placeholder + still link to blog</li>
+  <li>Bad slug/URL → validate before publish</li>
+  <li>Platform API blocked → schedule manual fallback</li>
+</ul>
+
+<h2>4) Tracking without chaos</h2>
+<p>
+Every outbound link should be tagged. Not later. Not “eventually.”
+If you don’t track, you’re guessing.
+</p>
+<div class="callout">
+  <b>Recommended:</b> Use UTMs + a simple click endpoint (<code>/api/track</code>) so you can attribute what works.
+</div>
+
+
+      <div class="callout">
+        <b>Next step:</b> if you want this post to drive traffic, add one clear CTA and track it.
+        <div class="cta-row">
+          <a class="btn" data-track="post_cta_primary" href="/blog.html">Back to Blog →</a>
+          <a class="btn" data-track="post_cta_videos" href="/latest-videos.html">Latest Videos →</a>
+        </div>
       </div>
     </div>
   </div>
+
+  <script src="/assets/turnstile.js"></script>
 </body>
 </html>

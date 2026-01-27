@@ -1,0 +1,43 @@
+{
+  "items": [
+    {
+      "category": "SYSTEM",
+      "title": "The calm system that outputs daily",
+      "excerpt": "Turn one theme into many outputs\u2014then measure what works.",
+      "image": "/assets/placeholder.jpg",
+      "hashtags": [
+        "#workflow",
+        "#shortform",
+        "#tracking"
+      ],
+      "read_time": "4 min read",
+      "url": "/blog/01-system.html"
+    },
+    {
+      "category": "WRITING",
+      "title": "Make posts feel powerful (without hype)",
+      "excerpt": "Structure, direction, and calm persuasion that converts.",
+      "image": "/assets/placeholder.jpg",
+      "hashtags": [
+        "#copywriting",
+        "#clarity",
+        "#cta"
+      ],
+      "read_time": "3 min read",
+      "url": "/blog/02-make-it-move.html"
+    },
+    {
+      "category": "FUNNEL",
+      "title": "A funnel that feels clean, not salesy",
+      "excerpt": "What to put on every page + subtle cross-links done right.",
+      "image": "/assets/placeholder.jpg",
+      "hashtags": [
+        "#funnel",
+        "#ux",
+        "#conversion"
+      ],
+      "read_time": "4 min read",
+      "url": "/blog/03-funnel.html"
+    }
+  ]
+}
