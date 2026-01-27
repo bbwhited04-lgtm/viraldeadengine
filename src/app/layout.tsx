@@ -16,36 +16,33 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body>
-        <header className="siteHeader">
-          <div className="container">
-            <div className="brand">
-              <span className="brandMark">⚡</span>
-              <span className="brandName">Viral Dead Engine</span>
-            </div>
+<header className="siteHeader">
+  <div className="container headerInner">
+    <div className="brand">
+      <span className="brandMark">⚡</span>
+      <span className="brandName">Viral Dead Engine</span>
+    </div>
 
-            <nav className="nav">
-  <a href="/" className="navLink">Home</a>
+    <nav className="nav">
+      <a href="/" className="navLink">Home</a>
+      <a href="/blog" className="navLink">Blog</a>
+      <a href="/docs" className="navLink">Docs</a>
+      <a
+        href="https://whitedbreeze.gumroad.com/l/nsjcc"
+        className="navCta"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Buy
+      </a>
+    </nav>
+  </div>
+</header>
 
-  <a href="/blog" className="navLink">
-    Blog
-  </a>
+<main className="page">
+  <div className="container">{children}</div>
+</main>
 
-  <a href="/docs" className="navLink">
-    Docs
-  </a>
-
-  <a
-    href="https://whitedbreeze.gumroad.com/l/nsjcc"
-    className="navCta"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Buy
-  </a>
-</nav>
-
-          </div>
-        </header>
 
         <div className="container">{children}</div>
 
