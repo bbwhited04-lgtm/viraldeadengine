@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import type { ReactNode } from "react";
+import Script from "next/script";
 export const metadata: Metadata = {
   title: {
     default: "Viral Dead Engine",
@@ -65,7 +66,14 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             </div>
           </div>
         </footer>
+        <Script
+  id="tiktok-embed"
+  src="https://www.tiktok.com/embed.js"
+  strategy="lazyOnload"
+/>
+
       </body>
     </html>
   );
 }
+
