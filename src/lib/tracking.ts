@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-export function getParam(searchParams: Record<string, string | string[] | undefined>, key: string): string {
-  const v = searchParams[key];
-  if (!v) return "";
-  return Array.isArray(v) ? (v[0] ?? "") : v;
-=======
 export function getParam(
   searchParams: Record<string, string | string[] | undefined>,
   key: string
@@ -11,7 +5,6 @@ export function getParam(
   const v = searchParams[key];
   if (!v) return "";
   return Array.isArray(v) ? v[0] ?? "" : v;
->>>>>>> 4a73cf7 (Add tracking helper and tracked blog CTA)
 }
 
 export function buildGumroadUrl(base: string, params: Record<string, string>): string {

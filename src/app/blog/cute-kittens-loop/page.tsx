@@ -1,4 +1,5 @@
-import { buildGumroadUrl, getParam } from "@/lib/tracking";
+import { buildGumroadUrl, getParam } from "../../../lib/tracking";
+
 
 export const metadata = {
   title: "Cute Kittens Loop: The 7–11 Second Trick",
