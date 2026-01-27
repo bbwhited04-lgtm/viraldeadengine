@@ -1,58 +1,245 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Blog — Viral Dead Engine</title>
+
   <style>
     body{margin:0;background:#0e0e0e;color:#fff;font-family:Arial,sans-serif}
-    .wrap{max-width:980px;margin:0 auto;padding:22px 16px 40px}
-    a{color:#fff}
-    .top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-top:16px}
-    .card{border:1px solid rgba(255,255,255,.12);border-radius:16px;overflow:hidden;background:#151515;text-decoration:none}
-    .card img{width:100%;height:160px;object-fit:cover;display:block}
-    .p{padding:14px}
-    .k{opacity:.75;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase}
-    h1{margin:0}
-    h3{margin:8px 0}
-    p{margin:0;opacity:.8;line-height:1.45}
+    .wrap{max-width:1100px;margin:0 auto;padding:24px 16px 48px}
+    a{color:#fff;text-decoration:none}
+    h1{margin:0 0 6px}
+    h2{margin:0;font-size:1.1rem}
+    p{opacity:.8;line-height:1.55}
+
+    .top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:18px}
+    .nav a{opacity:.85}
+    .nav a:hover{opacity:1}
+
+    /* Turnstile */
+    .turnstile{margin:26px 0}
+    .ts-shell{
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:16px;
+      overflow:hidden;
+      background:#151515;
+    }
+    .ts-head{
+      display:flex;align-items:baseline;justify-content:space-between;
+      gap:12px;padding:14px;border-bottom:1px solid rgba(255,255,255,.08);
+      flex-wrap:wrap
+    }
+    .ts-head p{margin:0;font-size:.85rem;opacity:.7}
+
+    .ts-viewport{overflow:hidden}
+    .ts-track{display:flex;transition:transform .5s ease}
+    .ts-slide{min-width:100%;box-sizing:border-box;padding:16px}
+
+    .ts-controls{
+      display:grid;grid-template-columns:auto 1fr auto;gap:12px;
+      align-items:center;padding:12px;border-top:1px solid rgba(255,255,255,.08)
+    }
+    .ts-btn{
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.06);
+      color:#fff;padding:8px 12px;border-radius:10px;
+      cursor:pointer;font-weight:700
+    }
+    .ts-dots{display:flex;justify-content:center;gap:8px}
+    .ts-dot{
+      width:8px;height:8px;border-radius:50%;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(255,255,255,.08);cursor:pointer
+    }
+    .ts-dot[aria-current="true"]{background:rgba(255,255,255,.6)}
+
+    /* Video slide */
+    .ts-video{display:grid;grid-template-columns:1.4fr 1fr;gap:14px}
+    .ts-video iframe,.ts-video video{
+      width:100%;aspect-ratio:16/9;border-radius:12px;border:0;background:#000
+    }
+    .ts-meta h3{margin:0 0 6px}
+    .ts-meta p{margin:0 0 10px}
+
+    /* Blog card */
+    .post-card{
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:14px;overflow:hidden;background:#111
+    }
+    .post-card img{
+      width:100%;height:220px;object-fit:cover;display:block
+    }
+    .post-card .inner{padding:14px}
+    .kicker{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;opacity:.7}
+    .row{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-top:10px}
+    .meta{font-size:.85rem;opacity:.7}
+
+    @media(max-width:860px){
+      .ts-video{grid-template-columns:1fr}
+      .post-card img{height:180px}
+    }
   </style>
 </head>
+
 <body>
   <div class="wrap">
     <div class="top">
-      <h1>Blog</h1>
       <div>
-        <a href="/">Home</a> • <a href="/latest-videos.html">Latest Videos</a> • <a href="/bio.html">Bio</a>
+        <h1>Blog</h1>
+        <p>Short updates, infrastructure notes, and the quiet engine behind Viral Dead.</p>
+      </div>
+      <div class="nav">
+        <a href="/">Home</a> ·
+        <a href="/latest-videos.html">Latest Videos</a> ·
+        <a href="/bio.html">Bio</a>
       </div>
     </div>
 
-    <div class="grid">
-      <a class="card" href="/blog/01-automation.html">
-        <img src="/assets/img/blog-automation.jpg" alt="Automation"/>
-        <div class="p">
-          <div class="k">Playbook</div>
-          <h3>Build once. Run forever.</h3>
-          <p>A daily posting system that scales without burnout.</p>
+    <!-- VIDEOS TURNSTILE -->
+    <section class="turnstile">
+      <div class="ts-shell" data-turnstile data-interval="4500">
+        <div class="ts-head">
+          <h2>Latest Videos</h2>
+          <p>Auto‑rotates • pauses on hover</p>
         </div>
-      </a>
-      <a class="card" href="/blog/02-content-engine.html">
-        <img src="/assets/img/blog-content.jpg" alt="Content"/>
-        <div class="p">
-          <div class="k">Strategy</div>
-          <h3>Loops beat explanations.</h3>
-          <p>Why unresolved motion wins and how to ship 10/day.</p>
+
+        <div class="ts-viewport">
+          <div class="ts-track">
+            <div class="ts-slide">
+              <div class="ts-video">
+                <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID_1" loading="lazy"></iframe>
+                <div class="ts-meta">
+                  <h3>Short‑form viral clip</h3>
+                  <p>Entry point content that feeds traffic into the blog.</p>
+                  <a href="/blog/01-automation.html">Read related post →</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="ts-slide">
+              <div class="ts-video">
+                <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID_2" loading="lazy"></iframe>
+                <div class="ts-meta">
+                  <h3>Automation preview</h3>
+                  <p>Generated media routed to owned pages.</p>
+                  <a href="/blog/02-content-engine.html">Read related post →</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </a>
-      <a class="card" href="/blog/03-infrastructure.html">
-        <img src="/assets/img/blog-infrastructure.jpg" alt="Infrastructure"/>
-        <div class="p">
-          <div class="k">Ops</div>
-          <h3>Own the hub.</h3>
-          <p>Bio page + embeds + blog = one clean funnel.</p>
+
+        <div class="ts-controls">
+          <button class="ts-btn" data-prev>‹</button>
+          <div class="ts-dots" data-dots></div>
+          <button class="ts-btn" data-next>›</button>
         </div>
-      </a>
-    </div>
+      </div>
+    </section>
+
+    <!-- BLOG POSTS TURNSTILE -->
+    <section class="turnstile">
+      <div class="ts-shell" data-turnstile data-interval="5200">
+        <div class="ts-head">
+          <h2>From the Blog</h2>
+          <p>Infrastructure, automation, and growth systems</p>
+        </div>
+
+        <div class="ts-viewport">
+          <div class="ts-track">
+            <div class="ts-slide">
+              <article class="post-card">
+                <img src="/media/blog-automation.jpg" alt="Automation"/>
+                <div class="inner">
+                  <div class="kicker">Automation</div>
+                  <h3>How the engine runs</h3>
+                  <p>Breaking down the quiet systems that generate consistent output.</p>
+                  <div class="row">
+                    <div class="meta">4 min read</div>
+                    <a href="/blog/01-automation.html">Read →</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="ts-slide">
+              <article class="post-card">
+                <img src="/media/blog-content.jpg" alt="Content engine"/>
+                <div class="inner">
+                  <div class="kicker">Content</div>
+                  <h3>The content engine</h3>
+                  <p>Scaling distribution without platform dependence.</p>
+                  <div class="row">
+                    <div class="meta">3 min read</div>
+                    <a href="/blog/02-content-engine.html">Read →</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="ts-slide">
+              <article class="post-card">
+                <img src="/media/blog-infra.jpg" alt="Infrastructure"/>
+                <div class="inner">
+                  <div class="kicker">Infrastructure</div>
+                  <h3>Why boring wins</h3>
+                  <p>Stability, ownership, and long‑term leverage.</p>
+                  <div class="row">
+                    <div class="meta">5 min read</div>
+                    <a href="/blog/03-infrastructure.html">Read →</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="ts-controls">
+          <button class="ts-btn" data-prev>‹</button>
+          <div class="ts-dots" data-dots></div>
+          <button class="ts-btn" data-next>›</button>
+        </div>
+      </div>
+    </section>
   </div>
+
+<script>
+(function(){
+  document.querySelectorAll('[data-turnstile]').forEach(root=>{
+    const track=root.querySelector('.ts-track');
+    const slides=[...root.querySelectorAll('.ts-slide')];
+    const prev=root.querySelector('[data-prev]');
+    const next=root.querySelector('[data-next]');
+    const dotsWrap=root.querySelector('[data-dots]');
+    const interval=+root.dataset.interval||5000;
+    let i=0,t;
+
+    const dots=slides.map((_,n)=>{
+      const d=document.createElement('button');
+      d.className='ts-dot';
+      d.onclick=()=>go(n,true);
+      dotsWrap.appendChild(d);
+      return d;
+    });
+
+    function render(){
+      track.style.transform=`translateX(${-i*100}%)`;
+      dots.forEach((d,n)=>d.setAttribute('aria-current',n===i));
+    }
+    function go(n,user){
+      i=(n+slides.length)%slides.length;
+      render();
+      if(user) restart();
+    }
+    function restart(){clearInterval(t);t=setInterval(()=>go(i+1),interval)}
+    prev.onclick=()=>go(i-1,true);
+    next.onclick=()=>go(i+1,true);
+    root.onmouseenter=()=>clearInterval(t);
+    root.onmouseleave=restart;
+    render();restart();
+  });
+})();
+</script>
 </body>
 </html>
