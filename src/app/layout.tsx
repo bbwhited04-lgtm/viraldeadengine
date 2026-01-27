@@ -8,20 +8,6 @@ export const metadata: Metadata = {
   },
   description: "Viral Dead Engine — tools, docs, and distribution for viral content.",
   metadataBase: new URL("https://www.viraldead.pro"),
-  alternates: {
-    canonical: "/",
-  },
-  openGraph: {
-    title: "Viral Dead Engine",
-    description: "Tools, docs, and distribution for viral content.",
-    url: "https://www.viraldead.pro",
-    siteName: "Viral Dead Engine",
-    type: "website",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -39,7 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <a href="/" className="navLink">
                 Home
               </a>
-              <a href="/docs" className="navLink">Docs</a>
+              <a href="/docs" className="navLink">
                 Docs
               </a>
               <a
@@ -64,10 +50,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </div>
 
             <div className="footerRight">
-              <a href="https://viraldead.info" target="_blank" rel="noopener noreferrer">
-                License / AI Disclosure
-              </a>
-              <a href="https://whitedbreeze.gumroad.com/l/nsjcc" target="_blank" rel="noopener noreferrer">
+              <a href="/docs">License / AI Disclosure</a>
+              <a
+                href="https://whitedbreeze.gumroad.com/l/nsjcc"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Gumroad
               </a>
             </div>
