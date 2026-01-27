@@ -67,3 +67,39 @@
     justify-content: space-between;
   }
 }
+/* TikTok embed fix */
+.tiktokWrap {
+  position: relative;
+  width: 100%;
+  max-width: 360px;       /* controls card width */
+  aspect-ratio: 9 / 16;  /* 🔑 THIS fixes the height */
+  overflow: hidden;
+  border-radius: 16px;
+  background: #000;
+}
+
+/* Force TikTok iframe to respect container */
+.tiktokWrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+/* TikTok embed fix */
+.tiktokWrap {
+  position: relative;
+  width: 100%;
+  max-width: 360px;       /* controls card width */
+  aspect-ratio: 9 / 16;  /* 🔑 THIS fixes the height */
+  overflow: hidden;
+  border-radius: 16px;
+  background: #000;
+}
+
+/* Force TikTok iframe to respect container */
+.tiktokWrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
