@@ -1,9 +1,12 @@
+import { buildGumroadUrl, getParam } from "../../../lib/tracking";
+
 export const metadata = {
   title: "Oddly Satisfying: Marble Run Loops",
   description: "How to make oddly-satisfying clips that keep retention high.",
 };
 
-export default function Post() {
+export default function Post({ searchParams }: { searchParams: Record<string, string | string[] | undefined> }) {
+
   return (
     <main style={{ paddingTop: 32 }}>
       <h1>Oddly Satisfying: Marble Run Loops</h1>

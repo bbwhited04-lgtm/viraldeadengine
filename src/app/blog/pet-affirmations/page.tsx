@@ -1,9 +1,12 @@
+import { buildGumroadUrl, getParam } from "../../../lib/tracking";
+
 export const metadata = {
   title: "Pet Affirmations: Wholesome + Shareable",
   description: "How to pair cute visuals with simple affirmations without feeling cringe.",
 };
 
-export default function Post() {
+export default function Post({ searchParams }: { searchParams: Record<string, string | string[] | undefined> }) {
+
   return (
     <main style={{ paddingTop: 32 }}>
       <h1>Pet Affirmations: Wholesome + Shareable</h1>

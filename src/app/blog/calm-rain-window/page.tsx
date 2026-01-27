@@ -1,9 +1,12 @@
+import { buildGumroadUrl, getParam } from "../../../lib/tracking";
+
 export const metadata = {
   title: "Calm Rain Window: Background Loops That Convert",
   description: "Why calm ambience performs—and how to route clicks without killing vibes.",
 };
 
-export default function Post() {
+export default function Post({ searchParams }: { searchParams: Record<string, string | string[] | undefined> }) {
+
   return (
     <main style={{ paddingTop: 32 }}>
       <h1>Calm Rain Window: Background Loops That Convert</h1>

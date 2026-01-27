@@ -1,9 +1,12 @@
+import { buildGumroadUrl, getParam } from "../../../lib/tracking";
+
 export const metadata = {
   title: "Tiny Dopamine Checklist: Simple Wins",
   description: "A micro-checklist that performs well as text-on-screen content.",
 };
 
-export default function Post() {
+export default function Post({ searchParams }: { searchParams: Record<string, string | string[] | undefined> }) {
+
   return (
     <main style={{ paddingTop: 32 }}>
       <h1>Tiny Dopamine Checklist: Simple Wins</h1>

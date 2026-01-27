@@ -1,9 +1,12 @@
+import { buildGumroadUrl, getParam } from "../../../lib/tracking";
+
 export const metadata = {
   title: "First Viral Test: Short-Form Media Loops",
   description: "Initial observations from early short-form distribution tests.",
 };
 
-export default function FirstTestPost() {
+export default function Post({ searchParams }: { searchParams: Record<string, string | string[] | undefined> }) {
+
   return (
     <main style={{ paddingTop: 32 }}>
       <h1>First Viral Test: Short-Form Media Loops</h1>

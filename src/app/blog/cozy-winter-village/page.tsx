@@ -1,9 +1,12 @@
+import { buildGumroadUrl, getParam } from "../../../lib/tracking";
+
 export const metadata = {
   title: "Cozy Winter Village: The Comfort Loop",
   description: "A cozy visual loop strategy that keeps watch time strong.",
 };
 
-export default function Post() {
+export default function Post({ searchParams }: { searchParams: Record<string, string | string[] | undefined> }) {
+
   return (
     <main style={{ paddingTop: 32 }}>
       <h1>Cozy Winter Village: The Comfort Loop</h1>

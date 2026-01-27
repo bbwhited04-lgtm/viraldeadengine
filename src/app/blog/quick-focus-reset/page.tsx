@@ -1,9 +1,13 @@
+
+import { buildGumroadUrl, getParam } from "../../../lib/tracking";
+
 export const metadata = {
   title: "Quick Focus Reset: 20 Seconds",
   description: "A simple on-screen reset that works well as short-form content.",
 };
 
-export default function Post() {
+export default function Post({ searchParams }: { searchParams: Record<string, string | string[] | undefined> }) {
+
   return (
     <main style={{ paddingTop: 32 }}>
       <h1>Quick Focus Reset: 20 Seconds</h1>

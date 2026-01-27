@@ -1,9 +1,12 @@
+import { buildGumroadUrl, getParam } from "../../../lib/tracking";
+
 export const metadata = {
   title: "Retro 90s VHS Aesthetic: Nostalgia Wins",
   description: "A simple nostalgia formula for short clips and captions that hook fast.",
 };
 
-export default function Post() {
+export default function Post({ searchParams }: { searchParams: Record<string, string | string[] | undefined> }) {
+
   return (
     <main style={{ paddingTop: 32 }}>
       <h1>Retro 90s VHS Aesthetic: Nostalgia Wins</h1>

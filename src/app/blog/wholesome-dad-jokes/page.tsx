@@ -1,9 +1,12 @@
+import { buildGumroadUrl, getParam } from "../../../lib/tracking";
+
 export const metadata = {
   title: "Wholesome Dad Jokes: Comment Bait That Isn’t Toxic",
   description: "Use clean jokes to trigger comments and shares without controversy.",
 };
 
-export default function Post() {
+export default function Post({ searchParams }: { searchParams: Record<string, string | string[] | undefined> }) {
+
   return (
     <main style={{ paddingTop: 32 }}>
       <h1>Wholesome Dad Jokes: Comment Bait That Isn’t Toxic</h1>
