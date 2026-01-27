@@ -1,44 +1,71 @@
-﻿import Link from "next/link";
-import SocialBar from "../../components/SocialBar";
-import LatestVideoEmbeds from "../../components/LatestVideoEmbeds";
+﻿"use client";
 
-const posts = [
-  { href: "/blog/first-test", title: "First Viral Test: Short-Form Media Loops" },
-  { href: "/blog/cute-kittens-loop", title: "Cute Kittens Loop: The 7â€“11 Second Trick" },
-  { href: "/blog/baby-bears-in-snow", title: "Baby Bears in Snow: Instant Scroll-Stop" },
-  { href: "/blog/oddly-satisfying-marble", title: "Oddly Satisfying: Marble Run Loops" },
-  { href: "/blog/calm-rain-window", title: "Calm Rain Window: Background Loops That Convert" },
-  { href: "/blog/retro-90s-vhs", title: "Retro 90s VHS Aesthetic: Nostalgia Wins" },
-  { href: "/blog/tiny-dopamine-checklist", title: "Tiny Dopamine Checklist: Simple Wins" },
-  { href: "/blog/pet-affirmations", title: "Pet Affirmations: Wholesome + Shareable" },
-  { href: "/blog/cozy-winter-village", title: "Cozy Winter Village: The Comfort Loop" },
-  { href: "/blog/wholesome-dad-jokes", title: "Wholesome Dad Jokes: Comment Bait That Isnâ€™t Toxic" },
-  { href: "/blog/quick-focus-reset", title: "Quick Focus Reset: 20 Seconds" },
-];
+import Link from "next/link";
+import { useMemo, useState } from "react";
+import { POSTS } from "./_posts";
+import "./blog.css";
 
-export default function BlogIndex() {
+export default function BlogIndexPage() {
+  const [q, setQ] = useState("");
+
+  const items = useMemo(() => {
+    const query = q.trim().toLowerCase();
+    const sorted = [...POSTS].sort((a, b) => (a.date < b.date ? 1 : -1));
+    if (!query) return sorted;
+    return sorted.filter((p) => {
+      const hay = `${p.title} ${p.excerpt} ${(p.tags || []).join(" ")}`.toLowerCase();
+      return hay.includes(query);
+    });
+  }, [q]);
+
   return (
-    <main className="mx-auto max-w-5xl px-5 py-10">
-      <div className="flex items-center justify-between gap-3 flex-wrap">
-        <h1 className="text-4xl font-extrabold">Blog</h1>
-        <Link className="px-3 py-2 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10" href="/">Home</Link>
-      </div>
+    <main className="blogWrap">
+      <header className="blogHeader">
+        <div>
+          <h1 className="h1">Blog</h1>
+          <p className="sub">
+            Clean, fast posts that turn short-form videos into trackable site traffic.
+          </p>
+        </div>
 
-      <p className="opacity-80 mt-3">
-        Short posts that power the Viral Dead Engine distribution loop. Each post can be used as a landing page target for short-form content.
-      </p>
+        <div className="controls">
+          <input
+            className="input"
+            value={q}
+            onChange={(e) => setQ(e.target.value)}
+            placeholder="Search posts…"
+            aria-label="Search posts"
+          />
+        </div>
+      </header>
 
-      <SocialBar />
-
-      <ul className="mt-8 list-disc pl-6 space-y-2">
-        {posts.map((p) => (
-          <li key={p.href}>
-            <Link className="underline hover:no-underline" href={p.href}>{p.title}</Link>
-          </li>
+      <section className="grid" aria-label="Blog posts">
+        {items.map((p) => (
+          <article key={p.slug} className="card">
+            <Link href={`/blog/${p.slug}`} style={{ color: "inherit", textDecoration: "none" }}>
+              <img className="cover" src={p.coverImage} alt={p.title} />
+              <div className="cardBody">
+                <div className="meta">
+                  <span>{new Date(p.date).toLocaleDateString()}</span>
+                  {p.tags?.length ? <span>•</span> : null}
+                  {p.tags?.slice(0, 2).map((t) => (
+                    <span key={t}>{t}</span>
+                  ))}
+                </div>
+                <h2 className="title">{p.title}</h2>
+                <p className="excerpt">{p.excerpt}</p>
+                {p.tags?.length ? (
+                  <div className="tagRow" aria-label="Tags">
+                    {p.tags.map((t) => (
+                      <span className="tag" key={t}>{t}</span>
+                    ))}
+                  </div>
+                ) : null}
+              </div>
+            </Link>
+          </article>
         ))}
-      </ul>
-
-      <LatestVideoEmbeds />
+      </section>
     </main>
   );
 }
