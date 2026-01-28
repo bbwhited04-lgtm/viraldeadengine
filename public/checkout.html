@@ -82,7 +82,7 @@ fetch("https://viraldeadengine-1.onrender.com/stripe/checkout", {
   document.getElementById("startCheckout").onclick = async ()=>{
     try{
       msg("Creating checkout session…");
-      const out = await call("/stripe/create-checkout-session", {
+      const out = await call("/stripe/checkout", {
         price_id: "price_1SuDbbKC49F2A9OzmzeLK6BD",
         success_url: "https://viraldead.pro/success.html",
         cancel_url: "https://viraldead.pro/cancel.html"
