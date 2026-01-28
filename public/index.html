@@ -404,6 +404,38 @@
       showMain();
     }
   </script>
-  
+  <script>
+  const loadingScreen = document.getElementById("loadingScreen");
+  const video = document.getElementById("introVideo");
+
+  function showMainContent() {
+    if (!loadingScreen) return;
+    loadingScreen.style.display = "none";
+
+    // show your real site sections
+    document.querySelector(".topbar")?.style.setProperty("display", "block");
+    document.querySelector("header.hero")?.style.setProperty("display", "block");
+    document.querySelector("#features")?.style.setProperty("display", "block");
+    document.querySelector("#system")?.style.setProperty("display", "block");
+    document.querySelector(".footer")?.style.setProperty("display", "block");
+  }
+
+  if (video) {
+    // ✅ ONLY advance when video finishes
+    video.addEventListener("ended", showMainContent);
+
+    // 🔒 autoplay safety net (browser blocks autoplay sometimes)
+    const playAttempt = video.play();
+    if (playAttempt && typeof playAttempt.catch === "function") {
+      playAttempt.catch(() => {
+        // autoplay blocked → skip video
+        showMainContent();
+      });
+    }
+  } else {
+    // no video element found
+    showMainContent();
+  }
+</script>
 </body>
 </html>
