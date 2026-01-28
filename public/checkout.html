@@ -52,7 +52,7 @@
   const msg = (t)=>document.getElementById("msg").textContent=t;
   const API_BASE = "https://viraldeadengine-1.onrender.com";
   const apiBase = document.getElementById("apiBase");
-  apiBase.value = DEFAULT_API_BASE;
+  apiBase.value = API_BASE;
 
   async function call(path, payload){
     const api = (apiBase.value.trim() || API_BASE).replace(/\/$/,"");
