@@ -35,7 +35,7 @@
       </p>
 
       <p style="margin:0 0 10px"><b>API base URL</b> (your backend). For prod, set once to your deployed API.</p>
-      <input id="apiBase" class="input" placeholder="https://your-api-domain" />
+      <input id="apiBase" class="input" placeholder="https://viraldeadengine-1.onrender.com" />
 
       <div class="cta">
         <button class="ts-btn" id="startCheckout" type="button">Continue to secure checkout →</button>
@@ -50,12 +50,12 @@
 
 <script>
   const msg = (t)=>document.getElementById("msg").textContent=t;
-  const DEFAULT_API_BASE = localStorage.getItem("vd_api_base") || "http://localhost:8000";
+  const API_BASE = "https://viraldeadengine-1.onrender.com";
   const apiBase = document.getElementById("apiBase");
   apiBase.value = DEFAULT_API_BASE;
 
   async function call(path, payload){
-    const api = (apiBase.value.trim() || DEFAULT_API_BASE).replace(/\/$/,"");
+    const api = (apiBase.value.trim() || API_BASE).replace(/\/$/,"");
     localStorage.setItem("vd_api_base", api);
     const res = await fetch(api + path, {
       method: "POST",
