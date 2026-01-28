@@ -66,6 +66,18 @@
     if(!res.ok) throw new Error(data.detail || "Request failed");
     return data;
   }
+fetch("https://viraldeadengine-1.onrender.com/stripe/checkout", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    success_url: "https://viraldead.pro/success.html",
+    cancel_url: "https://viraldead.pro/checkout.html",
+    email: null // optional
+  })
+})
+
 
   document.getElementById("startCheckout").onclick = async ()=>{
     try{
@@ -85,6 +97,7 @@
   <div class="footer-links">
     <b>Our network:</b>
     <a href="https://deadapp.pro" target="_blank" rel="noopener">DeadApp.pro</a> ·
+    <a href="http://shortypro.com" target="_blank" rel="noopener">ShortyPro.com</a>
     <a href="https://insuretoday24.com" target="_blank" rel="noopener">InsureToday24.com</a> ·
     <a href="https://viraldead.pro" target="_blank" rel="noopener">ViralDead.pro</a>
   </div>
