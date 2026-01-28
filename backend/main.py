@@ -32,7 +32,22 @@ class Settings(BaseSettings):
 settings = Settings()
 
 app = FastAPI(title="ViralDead Backend", version="1.0.0")
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
+app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "https://viraldead.pro",
+        "https://www.viraldead.pro",
+        "https://viraldeadengine.vercel.app",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 # ---- CORS ----
 origins = [o.strip() for o in settings.cors_origins.split(",") if o.strip()]
 allow_origins = ["*"] if origins == ["*"] or not origins else origins
